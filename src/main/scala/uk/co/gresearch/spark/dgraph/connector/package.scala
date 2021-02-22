@@ -193,7 +193,7 @@ package object connector {
   // for testing purposes only
   val MaxLeaseIdEstimatorIdOption: String = s"$UidRangePartitionerEstimatorOption.$MaxLeaseIdEstimatorOption.id"
 
-  def toChannel(target: Target): ManagedChannel = NettyChannelBuilder.forTarget(target.toString).usePlaintext().maxInboundMessageSize(24 * 1024 * 1024).build()
+  def toChannel(target: Target): ManagedChannel = NettyChannelBuilder.forTarget(target.toString).usePlaintext().maxInboundMessageSize(1024 * 1024 * 1024).build()
 
   def toStub(channel: ManagedChannel): DgraphStub = DgraphGrpc.newStub(channel)
 

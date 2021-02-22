@@ -144,12 +144,12 @@
     </dependency>
 
     <!-- Test -->
-    <dependency>
-      <groupId>org.scalatest</groupId>
-      <artifactId>scalatest_${scala.compat.version}</artifactId>
-      <version>3.2.2</version>
-      <scope>test</scope>
-    </dependency>
+    <!-- <dependency> -->
+    <!--   <groupId>org.scalatest</groupId> -->
+    <!--   <artifactId>scalatest_${scala.compat.version}</artifactId> -->
+    <!--   <version>3.2.2</version> -->
+    <!--   <scope>test</scope> -->
+    <!-- </dependency> -->
   </dependencies>
 
   <distributionManagement>
@@ -161,7 +161,7 @@
 
   <build>
     <sourceDirectory>src/main/scala</sourceDirectory>
-    <testSourceDirectory>src/test/scala</testSourceDirectory>
+    <!-- <testSourceDirectory>src/test/scala</testSourceDirectory> -->
     <resources>
       <resource>
         <directory>python</directory>
@@ -178,11 +178,11 @@
         </includes>
       </resource>
     </resources>
-    <testResources>
-      <testResource>
-        <directory>src/test/resources</directory>
-      </testResource>
-    </testResources>
+    <!-- <testResources> -->
+    <!--   <testResource> -->
+    <!--     <directory>src/test/resources</directory> -->
+    <!--   </testResource> -->
+    <!-- </testResources> -->
     <plugins>
       <plugin>
         <groupId>org.scala-tools</groupId>
@@ -192,7 +192,7 @@
           <execution>
             <goals>
               <goal>compile</goal>
-              <goal>testCompile</goal>
+              <!-- <goal>testCompile</goal> -->
             </goals>
             <configuration>
               <args>
@@ -213,24 +213,24 @@
         </configuration>
       </plugin>
       <!-- enable scalatest -->
-      <plugin>
-        <groupId>org.scalatest</groupId>
-        <artifactId>scalatest-maven-plugin</artifactId>
-        <version>2.0.0</version>
-        <configuration>
-          <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
-          <junitxml>.</junitxml>
-          <filereports>WDF TestSuite.txt</filereports>
-        </configuration>
-        <executions>
-          <execution>
-            <id>test</id>
-            <goals>
-              <goal>test</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
+      <!-- <plugin> -->
+      <!--   <groupId>org.scalatest</groupId> -->
+      <!--   <artifactId>scalatest-maven-plugin</artifactId> -->
+      <!--   <version>2.0.0</version> -->
+      <!--   <configuration> -->
+      <!--     <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory> -->
+      <!--     <junitxml>.</junitxml> -->
+      <!--     <filereports>WDF TestSuite.txt</filereports> -->
+      <!--   </configuration> -->
+      <!--   <executions> -->
+      <!--     <execution> -->
+      <!--       <id>test</id> -->
+      <!--       <goals> -->
+      <!--         <goal>test</goal> -->
+      <!--       </goals> -->
+      <!--     </execution> -->
+      <!--   </executions> -->
+      <!-- </plugin> -->
       <plugin>
         <groupId>org.sonatype.plugins</groupId>
         <artifactId>nexus-staging-maven-plugin</artifactId>
